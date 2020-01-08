@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block content%}
+
+
+
+
+
+
+    <!--================Home Banner Area ================= -->
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center"
+          >
+            <div class="mb-3 mb-md-0">
+              <h2>Cart</h2>
+              <p>Very us move be blessed multiply night</p>
+            </div>
+            <div class="page_link">
+              <a href="index.html">Home</a>
+              <a href="cart.html">Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Cart Area =================-->
+    <section class="cart_area">
+      <div class="container">
+        <div class="cart_inner">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Remove</th>
+                  <th>Unit Price</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                 {% for item in cart %}
+                    {% with product=item.product  %}
+                <tr>
+
+
+                  <td>
+                    <div class="media">
+                      <div class="d-flex">
+                        <img
+                          src="{{ product.image.url }}"
+                          alt=""
+                        />
+                      </div>
+                      <div class="media-body">
+                        <p><td>{{ product.name }}</td></p>
+                      </div>
+                    </div>
+                  </td>
+
+
+
+
+                  <td>
+                  <form action="{% url "cart:cart_add" product.id %}" method="post">
+                    {% csrf_token %}
+                    {{ item.update_quantity_form.quantity }}
+                    {{ item.update_quantity_form.update }}
+                    <input type="submit" value="Update" class="main_btn">
+                </form>
+                  </td>
+
+
+
+
+                  <td>
+                    <a href="{% url "cart:cart_remove" product.id %}">Remove</a>
+                </td>
+
+
+                  <td>
+                    <h5> INR {{ item.price }}</h5>
+                  </td>
+                  
+                  <td>
+                    <h5>INR {{ item.total_price }}</h5>
+                  </td>
+
+
+                </tr>
+                
+                <tr>
+                  
+                </tr>
+                {% endwith %}
+            {% endfor %}  
+                  <!--
+                                    <tr class="bottom_button">
+                  <td>
+                    <a class="gray_btn" href="#">Update Cart</a>
+                  </td>
+                -->
+                  <td></td>
+                  <td></td>
+                  <!--
+                  <td>
+                    <div class="cupon_text">
+                      <input type="text" placeholder="Coupon Code" />
+                      <a class="main_btn" href="#">Apply</a>
+                      <a class="gray_btn" href="#">Close Coupon</a>
+                    </div>
+                  </td>
+                -->
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <h5>Subtotal</h5>
+                  </td>
+                  <td>
+                    <h5>INR {{ cart.get_total_price }}</h5>
+                  </td>
+                </tr>
+                
+                <tr class="out_button_area">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <div class="checkout_btn_inner">
+                      <a class="gray_btn" href="{% url "shop:product_list" %}">Continue Shopping</a>
+                      <a class="main_btn" href="{% url "orders:order_create" %}">Proceed to checkout</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================End Cart Area =================-->
+{% endblock %}

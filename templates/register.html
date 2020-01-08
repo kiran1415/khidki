@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static%}
+
+<!--
+<div class="section-top-border" style="margin-left: 10%;" >
+    <div class="row" class="ml-50">
+        <div class="col-lg-8 col-md-8">
+            <h3 class="mb-30 title_color">Register</h3>
+            <form action="register"  method="POST">
+                
+               {%  csrf_token %}
+                
+                <div class="mt-10">
+                    <input type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="password" name="password1" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="password" name="password2" placeholder=" Confirm password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
+                     required class="single-input">
+                </div>
+                <div class="button-group-area mt-40">
+                  <button type="submit" name="register" placeholder="Register" class="genric-btn success circle arrow">Register</button>
+                 </div>
+               
+            </form>
+        </div>
+        
+    </div>
+</div>
+</div>
+</div>
+-->
+
+
+
+<section class="testimonial py-5" id="testimonial">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-4 py-5 bg-primary text-white text-center ">
+                <div class=" ">
+                    <div class="card-body">
+                        <img src="" style="width:30%">
+                        <h2 class="py-3">Registration</h2>
+                        <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.
+
+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 py-5 border">
+                <h4 class="pb-4">Please fill with your details</h4>
+                <form action="register"  method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <input id="Full Name" name="FirstName" placeholder="First Name" class="form-control" type="text">
+                        </div>
+                        <div class="form-group col-md-12">
+                          <input type="LastName" class="form-control" name="LastName" id="inputEmail4" placeholder="LastName">
+                        </div>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <input id="email." name="email" placeholder="Email Id." class="form-control" required="required" type="text">
+                        </div>
+                        
+                        <div class="form-group col-md-12">
+                            <input type="password" name="pass1" class="form-control" id="inputEmail4" placeholder="password">
+                          </div>
+                          <div class="form-group col-md-12">
+                            <input type="password" name="pass2" class="form-control" id="inputEmail4" placeholder="Cofirm password">
+                          </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                  <label class="form-check-label" for="invalidCheck2">
+                                    <small>By clicking Submit, you agree to our Terms & Conditions, Visitor Agreement and Privacy Policy.</small>
+                                  </label>
+                                </div>
+                              </div>
+                    
+                          </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+
+    {% for message in messages %}
+    <h1>{{message}}</h1>
+    {% endfor %}
+</div>
+
+{% endblock %}

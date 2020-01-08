@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% load static%}
+
+<div class="section-top-border" style="margin-left: 10%;" >
+    <div class="row" class="ml-50">
+        <div class="col-lg-8 col-md-8">
+            <h3 class="mb-30 title_color">Login</h3>
+            <form action="login" method="POST" >
+                {% csrf_token %}
+               
+                
+                <div class="mt-10">
+                    <input type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="password" name="password" placeholder="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
+                     required class="single-input">
+                </div>
+                <div class="button-group-area mt-40">
+                  <input type="submit" name="login" class="genric-btn success circle arrow">
+            </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}
