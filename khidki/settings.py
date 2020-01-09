@@ -25,7 +25,7 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['67.205.153.206']
+ALLOWED_HOSTS = ['67.205.153.206', 'http://khidkistudio.com/']
 
 
 # Application definition
