@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['khidkistudio.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'contact.apps.ContactConfig',
     'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
     'accounts.apps.AccountsConfig',
