@@ -27,7 +27,7 @@ DEBUG = True
 
 
 #ALLOWED_HOSTS = ['khidkistudio.com','165.227.80.226','localhost']
-ALLOWED_HOSTS = ['khidkistudio.com']
+ALLOWED_HOSTS = []
 #kira@22
 # Application definition
 
