@@ -25,7 +25,7 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.khidkistudio.com','67.205.153.206' , 'localhost']
+#ALLOWED_HOSTS = ['www.khidkistudio.com','67.205.153.206' , 'localhost']
 
 
 # Application definition
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'khidki.urls'
 
@@ -145,3 +146,13 @@ STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
 
+def ipaddresses():
+    iplist = []
+for interface in netifaces.interfaces():
+    addrs = netifaces.ifaddresses(interface)
+for x in (netifaces.AF_INET, netifaces.AFINET6):
+    if x in addrs:
+        iplist.append(addrs[x][0][‘addr’])
+return ip_list
+
+ALLOWED_HOSTS = ip_addresses()
