@@ -26,8 +26,8 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['khidkistudio.com','165.227.80.226','localhost']
-
+#ALLOWED_HOSTS = ['khidkistudio.com','165.227.80.226','localhost']
+ALLOWED_HOSTS = []
 #kira@22
 # Application definition
 
