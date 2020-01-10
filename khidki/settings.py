@@ -25,7 +25,7 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['khidkistudio.com','67.205.153.206']
+ALLOWED_HOSTS = ['khidkistudio.com','67.205.153.206' , 'localhost']
 
 
 # Application definition
@@ -82,6 +82,9 @@ WSGI_APPLICATION = 'khidki.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': 'harry',
+        #'USER' : 'postgres',
+        #'PASSWORD' : '1234',
         'NAME': 'khidki',
         'USER' : 'khidki_admin',
         'PASSWORD' : 'khidki@123',
