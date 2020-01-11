@@ -23,15 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['khidkistudio.com']
+ALLOWED_HOSTS = ['khidkistudio.com' , 'localhost','127.0.0.1']
 
 #kiran@22
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
@@ -81,21 +82,32 @@ WSGI_APPLICATION = 'khidki.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
+if DEBUG:
+     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': 'harry',
-        #'USER' : 'postgres',
-        #'PASSWORD' : '1234',
+        'NAME': 'harry',
+        'USER' : 'postgres',
+        'PASSWORD' : '1234',
+        'HOST' : 'localhost',
+        'PORT': '5432'
+
+    }
+}
+
+  
+else:
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'khidki',
         'USER' : 'khidki_admin',
         'PASSWORD' : 'khidki@123',
         'HOST' : 'localhost',
         'PORT': '5432'
 
-    }
-}
+     }
+   }
 
 
 # Password validation

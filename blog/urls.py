@@ -1,4 +1,4 @@
-"""khidki URL Configuration
+"""arto URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,18 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path , include
-from django.conf.urls.static import static
-from django.conf import settings 
-from django.conf.urls import  handler404
-from home.views import  view_404
+from django.urls import path
+
+
+from . import views
 
 urlpatterns = [
-    path('contact' , include('contact.urls')),
-    path('blog' , include('blog.urls')),
-    path('' , include('accounts.urls')),
-    path('cart' , include('cart.urls')),
-    path('shop' , include('shop.urls')),
-    path('' , include('home.urls')),
-    path('admin/', admin.site.urls),
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    #path('', views.default, name='default'),
+    path('', views.blog_list, name='blog_list'),
+    #path('home', views.home, name='index'),
+
+   
+   
+]
