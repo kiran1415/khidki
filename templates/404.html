@@ -1,12 +1,155 @@
+{% load static %}
+
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>site is underconstruction</title>
+     <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="{%static 'img/favicon.png' %}" type="image/png" />
+  <title>Eiser ecommerce</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{%static 'css/bootstrap.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/linericon/style.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/themify-icons.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/flaticon.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/owl-carousel/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/lightbox/simpleLightbox.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/nice-select/css/nice-select.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/animate-css/animate.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/jquery-ui/jquery-ui.css' %}" />
+  <!-- main css -->
+  <link rel="stylesheet" href="{%static 'css/style.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/responsive.css' %}" />
 </head>
-<body>
-  <h1>404</h1>  
-</body>
+   <body>
+    <div class="well well-sm">
+      {% for message in messages %}
+     <script>
+       alert("{{message}}")
+     </script> 
+      {% endfor %}
+  </div>
+    <li class="nav-item" style="margin-top: 1%;">
+
+         {% if user.is_authenticated %}
+         <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{request.user.username}}
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Welcome {{request.user.username}} </li>
+            <li style="color: #64FFB1;"><a href="home" style="color: #64FFB1;padding-left: 5%;"><i class="fa fa-arrow-right"  style="color: #000000 ;"></i>Website</a></li>
+            
+            <li class="divider"></li>
+            <li class="dropdown-header"></li>
+            <li><a href="logout" style="color: #64FFB1;padding-left: 5%;"  ><i class="fa fa-arrow-right" style="color: #000000 ;"></i>Logout</a></li>
+          </ul>
+        </div>
+
+      
+        {% else %}
+        <button type="button" class="btn btn-success ml-3 " style="color:#64FFB1 ;" data-toggle="modal" data-target="#loginmodel">
+         login
+         </button>
+        {% endif %}
+
+          </li>
+    <div class="container">
+        <div class="row" style="padding-top: 10%;">
+          <div class="mx-auto">
+          <img src="{%static 'img/Asset 1.svg' %}" height="100%" width="100%" >
+          </div>
+         
+        </div>
+
+        <div class="row" style="margin-top: 3%;">
+                   <h1>404</h1>
+                <div class="row" style="margin-top: 5%;">
+                  <h5  style="margin-left: 28%;">contact@khidkistudio.com</h5>
+          
+                </div>
+               
+              </div>
+           
+          </div>
+         
+
+
+      </div>
+    
+
+
+      
+ <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="mb-30 title_color">Login</h3>
+          <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+              <form action="login" method="POST" >
+                  {% csrf_token %}
+                 
+                  
+                  <div class="mt-10">
+                      <input type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
+                       required class="single-input">
+                  </div>
+                  <div class="mt-10">
+                      <input type="password" name="password" placeholder="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
+                       required class="single-input">
+                  </div>
+                  <div class="button-group-area mt-40">
+                    <button type="submit" name="register" placeholder="Register" class="genric-btn success circle arrow">Login</button>
+                   </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" class="btn btn-primary " data-toggle="modal" data-target="#registermodel" >Register Here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+
+      <div>
+
+        
+
+        </div>
+
+      <script src="{%static 'js/jquery-3.2.1.min.js' %}"></script>
+    </script>>
+      <script src="{%static 'js/popper.js' %}"></script>
+      <script src="{%static 'js/bootstrap.min.js' %}"></script>
+      <script src="{%static 'js/stellar.js' %}"></script>
+      <script src="{%static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+      <script src="{%static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+      <script src="{%static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+      <script src="{%static 'vendors/isotope/isotope-min.js' %}"></script>
+      <script src="{%static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+      <script src="{%static 'js/jquery.ajaxchimp.min.js' %}"></script>
+      <script src="{%static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+      <script src="{%static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+      <script src="{%static 'js/mail-script.js' %}"></script>
+      <script src="{%static 'js/theme.js' %}"></script>
+
+  </body>
 </html>
