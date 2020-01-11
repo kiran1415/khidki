@@ -21,7 +21,7 @@ from . import views
 
 urlpatterns = [
     #path('', views.default, name='default'),
-    path('', views.blog_list, name='blog_list'),
+    path('', views.blog, name='blog')
     #path('home', views.home, name='index'),
 
    
