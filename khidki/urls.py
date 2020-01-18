@@ -23,7 +23,7 @@ from home.views import  view_404
 urlpatterns = [
     path('contact' , include('contact.urls')),
     path('blog' , include('blog.urls')),
-    path('' , include('accounts.urls')),
+    path('accounts/' , include('accounts.urls')),
     path('cart' , include('cart.urls')),
     path('shop' , include('shop.urls')),
     path('' , include('home.urls')),

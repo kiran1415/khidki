@@ -35,7 +35,7 @@
           <div class="col-lg-7">
             <div class="float-left">
               <p>Phone: +01 256 25 235</p>
-              <p>email: info@eiser.com</p>
+              <p>email: contact@khidkistudio.com</p>
             </div>
           </div>
           <div class="col-lg-5">
@@ -50,7 +50,7 @@
                 </li>
                
                 <li>
-                  <a href="/accounts/register">
+                  <a href="/tracking">
                     Tracking
                   </a>
                 
@@ -132,11 +132,34 @@
                   </li>
                 -->
                 {% if user.is_authenticated %}
-                <li>
-                  <a href="logout">
-                   logout
-                   </a>
-                  
+              
+                   <div class="dropdown" style="margin-top: 20%;">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
+                     {{  request.user.first_name }} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li class="dropdown">
+                        <a href="#">One more dropdown</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li class="dropdown">
+                            <a href="#">One more dropdown</a>
+                            <ul class="dropdown-menu">
+                            ...
+                            </ul>
+                          </li>
+                          <li><a href="#">Something else here</a></li>
+                          <li><a href="#">Separated link</a></li>
+                         </ul>
+                      </li>
+                      <li><a href="#">Something else here</a></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li><a href="logout">logout</a>
+                    </ul>
+                  </div>
                 </li>
                 {% else %}
                 
@@ -202,6 +225,7 @@
             </form>
       </div>
       <div class="modal-footer">
+        <a href="">Forgot password</a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" class="btn btn-primary " data-toggle="modal" data-target="#registermodel" >Register Here</button>
       </div>
@@ -235,7 +259,14 @@
         <form action="accounts/register"  method="POST">
                 
           {%  csrf_token %}
-           
+          <div class="mt-10">
+            <input type="text" name="FirstName" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'"
+             required class="single-input">
+        </div> <div class="mt-10">
+          <input type="text" name="LastName" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'"
+           required class="single-input">
+      </div> 
+
            <div class="mt-10">
                <input type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
                 required class="single-input">

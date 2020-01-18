@@ -110,7 +110,7 @@ ul{
     margin-bottom:0px
 }
 .active{
-    color:#64FFB1;
+    color:#71cd14
 }
 .header_area{
     position:relative;
@@ -142,7 +142,7 @@ ul{
     transition:all 300ms linear 0s
 }
 .header_area .navbar .icons:hover{
-    color:#64FFB1
+    color:#71cd14
 }
 @media (max-width: 992px){
     .header_area .navbar .nav{
@@ -163,8 +163,7 @@ ul{
     display:none
 }
 .header_area .navbar .nav .nav-item:hover .nav-link,.header_area .navbar .nav .nav-item.active .nav-link{
-    color:#64FFB1
-   /* #71cd14 */ 
+    color:#71cd14
 }
 .header_area .navbar .nav .nav-item.submenu{
     position:relative
@@ -227,7 +226,7 @@ ul{
     border-bottom:none
 }
 .header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link{
-    background:#64FFB1;
+    background:#71cd14;
     color:#fff
 }
 @media (min-width: 992px){
@@ -474,7 +473,7 @@ ul{
     z-index:1
 }
 .blog_banner .banner_inner .overlay{
-    background:url(../img/banner/banner1.jpg) no-repeat scroll center center;
+    background:url(../img/banner/banner-2.jpg) no-repeat scroll center center;
     opacity:0.5;
     height:125%;
     position:absolute;
