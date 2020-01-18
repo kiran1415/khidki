@@ -38,8 +38,8 @@ def register(request):
                  user = User.objects.create_user(username = email,password = pass1 , first_name=first_name , last_name=last_name ,   email=email)
                  user.save();
                  print("user is created")
-                 return reverse(''')
-                 #return redirect('register')
+                 #return reverse('')
+                 return redirect('register')
         else:
              messages.info(request , 'password does not metch')
              return redirect('register') 
