@@ -157,14 +157,14 @@
                       </li>
                       <li><a href="#">Something else here</a></li>
                       <li><a href="#">Separated link</a></li>
-                      <li><a href="logout">logout</a>
+                      <li><a href="accounts/logout">logout</a>
                     </ul>
                   </div>
                 </li>
                 {% else %}
                 
-                  <li class="nav-item">
-                  <button type="button" class="btn btn-primary ml-3 mt-3" data-toggle="modal" data-target="#loginmodel">
+                  <li class="nav-item" >
+                  <button type="button" style="background-color: #64FFB1;" class="btn btn-default ml-3 mt-3" data-toggle="modal" data-target="#loginmodel">
                     Login
                    </button>
 
@@ -172,8 +172,8 @@
                     </li>
 
                     <li class="nav-item">
-                      <button type="button" class="btn btn-primary ml-3  mt-3" data-toggle="modal" data-target="#registermodel">
-                        register
+                      <button type="button" style="background-color: #64FFB1;" class="btn btn-default ml-3  mt-3"  data-toggle="modal" data-target="#registermodel">
+                        Register
                        </button>
     
                        
@@ -198,8 +198,8 @@
  <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="mb-30 title_color">Login</h3>
+      <div class="modal-header" style="margin-left: 35%;color: #64FFB1;">
+        <h3 class="mb-30  title_color" style="color: #000000;margin-top: 5%;" >Login</h3>
         <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -219,15 +219,42 @@
                     <input type="password" name="password" placeholder="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
                      required class="single-input">
                 </div>
-                <div class="button-group-area mt-40">
-                  <button type="submit" name="register" placeholder="Register" class="genric-btn success circle arrow">Login</button>
+                <div class="button-group-area mt-40 " style="margin-left: 30%; color: #64FFB1;" >
+                  <button type="submit" name="register" placeholder="Register" class="loginbutton">Login</button>
                  </div>
+               
             </form>
+
+            <style>
+              .loginbutton
+              {
+                background-color:#64FFB1 ;
+                border: none;
+                color: #000000;
+                width:40%;
+                height: 10%;
+                padding: 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 15px;
+                border-radius: 8px;
+                
+           
+              
+              }
+           
+  
+    
+              
+            </style>
+
       </div>
+      <a href="" style="color: #000000;margin-left: 33%;">Forgot Password ? </a>
       <div class="modal-footer">
-        <a href="">Forgot password</a>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" class="btn btn-primary " data-toggle="modal" data-target="#registermodel" >Register Here</button>
+      
+     
+        <a href=""  data-dismiss="modal" data-toggle="modal" data-target="#registermodel" >Want to Register ?</a>
       </div>
     </div>
   </div>
@@ -248,8 +275,8 @@
 <div class="modal fade" id="registermodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="mb-30 title_color">Register</h3>
+      <div class="modal-header" style="margin-left: 30%;">
+        <h3 class="mb-30 title_color" style="color: #000000;margin-top:5%">Register</h3>
         <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -279,16 +306,18 @@
                <input type="password" name="password2" placeholder=" Confirm password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
                 required class="single-input">
            </div>
-           <div class="button-group-area mt-40">
-             <button type="submit" name="register" placeholder="Register" class="genric-btn success circle arrow">Register</button>
+           
+
+           <div class="button-group-area mt-40" style="margin-left: 30%;">
+             <button type="submit" name="register" placeholder="Register" class="loginbutton">Register</button>
             </div>
-          
+           
        </form>
            
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal"  class="btn btn-primary" data-toggle="modal" data-target="#loginmodel">Login Here</button>
+     
+        <a href=""  data-dismiss="modal"   data-toggle="modal" data-target="#loginmodel">Want to Login</button>
       </div>
     </div>
   </div>

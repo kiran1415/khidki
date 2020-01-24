@@ -37,30 +37,7 @@
      </script> 
       {% endfor %}
   </div>
-    <li class="nav-item" style="margin-top: 1%;">
-
-         {% if user.is_authenticated %}
-         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">{{request.user.username}}
-          <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">Welcome {{request.user.username}} </li>
-            <li style="color: #64FFB1;"><a href="home" style="color: #64FFB1;padding-left: 5%;"><i class="fa fa-arrow-right"  style="color: #000000 ;"></i>Website</a></li>
-            
-            <li class="divider"></li>
-            <li class="dropdown-header"></li>
-            <li><a href="logout" style="color: #64FFB1;padding-left: 5%;"  ><i class="fa fa-arrow-right" style="color: #000000 ;"></i>Logout</a></li>
-          </ul>
-        </div>
-
-      
-        {% else %}
-        <button type="button" class="btn btn-success ml-3 " style="color:#64FFB1 ;" data-toggle="modal" data-target="#loginmodel">
-         login
-         </button>
-        {% endif %}
-
-          </li>
+    
     <div class="container">
         <div class="row" style="padding-top: 10%;">
           <div class="mx-auto">
@@ -69,11 +46,39 @@
          
         </div>
 
-        <div class="row" style="margin-top: 3%;">
-                   <h1>404</h1>
-                <div class="row" style="margin-top: 5%;">
-                  <h5  style="margin-left: 28%;">contact@khidkistudio.com</h5>
-          
+        <div class="row" style="margin-top: 3%;" >
+                   <h1 style="color: #64FFB1;">Page Not Found</h1>
+                   
+
+                    
+        <div class="row" style="margin-top: 5%;">
+                 
+          <style>
+            @media only screen and (max-width: 600px) {
+              
+       h1{
+         margin-left: 25%;
+       }
+      }
+      @media only screen and (min-width: 1200px) {
+      h1{
+        margin-left: 40%;
+      }
+         }
+         @media only screen and (max-width: 600px) {
+              
+          a{
+            margin-left: 43%;
+          }
+         }
+         @media only screen and (min-width: 1200px) {
+         a{
+           margin-left: 47%;
+         }
+            }
+   
+        
+           </style>
                 </div>
                
               </div>
@@ -81,62 +86,16 @@
           </div>
          
 
-
+          <a href="/" style="color: #000000;"> Back to Home</a>
       </div>
     
-
-
-      
- <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="mb-30 title_color">Login</h3>
-          <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          
-              <form action="login" method="POST" >
-                  {% csrf_token %}
-                 
-                  
-                  <div class="mt-10">
-                      <input type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
-                       required class="single-input">
-                  </div>
-                  <div class="mt-10">
-                      <input type="password" name="password" placeholder="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
-                       required class="single-input">
-                  </div>
-                  <div class="button-group-area mt-40">
-                    <button type="submit" name="register" placeholder="Register" class="genric-btn success circle arrow">Login</button>
-                   </div>
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" class="btn btn-primary " data-toggle="modal" data-target="#registermodel" >Register Here</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  
-  
-
       <div>
 
-        
-
         </div>
 
+      
       <script src="{%static 'js/jquery-3.2.1.min.js' %}"></script>
-    </script>>
+   
       <script src="{%static 'js/popper.js' %}"></script>
       <script src="{%static 'js/bootstrap.min.js' %}"></script>
       <script src="{%static 'js/stellar.js' %}"></script>

@@ -15,14 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import  url
 
 from . import views
+
+app_name = 'home'
 
 urlpatterns = [
     #path('', views.default, name='default'),
     path('', views.index, name='index'),
     path('home', views.home, name='home'),
     path('about' , views.about , name='about'),
-    path('tracking' , views.tracking , name='about')
+    path('tracking' , views.tracking , name='about'),
+    path('404' ,  views.pagenotfound  , name = 'pagenotfound')
+
+    
 ]

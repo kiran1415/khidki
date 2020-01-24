@@ -1,8 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404 , redirect
 from .models import Category, Product
+from cart.models import  CartItem
 # cart.forms import CartAddProductForm
 
 
@@ -38,3 +39,13 @@ def product_detail(request , id , slug):
         'product':product
     }
     return render(request , 'single-product.html' , context)
+
+
+def add_to_cart(request , slug):
+    product = get_object_or_404(Product , slug=slug )
+    cart_item , created = CartItem.objects.get_or_create(
+        product = product ,
+        user   =  request.user ,
+        ordered = False
+    )
+    return redirect('shop:product_list')

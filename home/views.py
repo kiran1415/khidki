@@ -15,3 +15,6 @@ def about(request):
 
 def tracking(request):
     return render(request , 'tracking.html')
+
+def pagenotfound(request):
+    return render(request , '404.html') 

@@ -8,8 +8,8 @@ from shop.models import  Product
 
 
 class CartItem(models.Model):
-    product = models.ForeignKey(Product , on_delete=models.SET_NULL , null=True)
-    date_added = models.DateTimeField(auto_now=True)
+    product = models.ManyToManyField(Product, blank=True)
+    ordered = models.BooleanField(default=False)
     user = models.ForeignKey(settings.AUTH_USER_MODEL , on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
 

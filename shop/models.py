@@ -31,8 +31,9 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     stock = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
     class Meta:
         ordering = ('name', )
@@ -44,4 +45,9 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail', args=[self.id, self.slug])
 
+    def get_add_to_cart_url(self):
+        return reverse('shop:add-to-cart', kwargs={
+            'slug': self.slug
+        })
 
+  
