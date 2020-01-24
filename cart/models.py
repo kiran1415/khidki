@@ -8,8 +8,8 @@ from shop.models import  Product
 
 
 class CartItem(models.Model):
-    product = models.ManyToManyField(Product, blank=True)
-    ordered = models.BooleanField(default=False)
+    product = models.ForeignKey(Product , on_delete=models.SET_NULL , null=True)
+    date_added = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL , on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
 
@@ -21,6 +21,10 @@ class CartItem(models.Model):
     def get_total_item_price(self):
         return self.quantity * self.product.price
 
+    def get_add_to_cart_url(self):
+        return reverse("shop:add-to-cart", kwargs={
+            'slug': self.slug
+        })
 
 
 
