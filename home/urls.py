@@ -27,7 +27,9 @@ urlpatterns = [
     path('home', views.home, name='home'),
     path('about' , views.about , name='about'),
     path('tracking' , views.tracking , name='about'),
-    path('404' ,  views.pagenotfound  , name = 'pagenotfound')
+    path('404' ,  views.pagenotfound  , name = 'pagenotfound'),
+    path('thankyou' , views.thankyou , name='thankyou'),
+    path('offers' , views.offers , name='offers'),
+    path('terms' , views.terms , name='terms'),
 
-    
 ]

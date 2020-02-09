@@ -12,8 +12,8 @@
                         <div class="blog_item_img">
                           <img class="card-img rounded-0" src="{{blog.image.url}}" alt="">
                           <a href="#" class="blog_item_date">
-                            <h3>15</h3>
-                            <p>Jan</p>
+                            <h3>{{blog.created_at}}</h3>
+                           
                           </a>
                         </div>
                         
@@ -165,7 +165,7 @@
                             <li>
                                 <a href="#" class="d-flex">
                                     <p>{{c.name}}</p>
-                                    <p>(37)</p>
+                                    <p></p>
                                 </a>
                             </li>
                             {% endfor %}
@@ -206,42 +206,20 @@
 
                       <aside class="single_sidebar_widget popular_post_widget">
                           <h3 class="widget_title">Recent Post</h3>
+                          {% for blog in blogs %}
                           <div class="media post_item">
-                              <img src="img/blog/popular-post/post1.jpg" alt="post">
+                             
                               <div class="media-body">
                                   <a href="single-blog.html">
-                                      <h3>From life was you fish...</h3>
+                                      <h3>{{blog.name}}</h3>
                                   </a>
-                                  <p>January 12, 2019</p>
+                                  <p>January 13, 2019</p>
                               </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post2.jpg" alt="post">                              
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>The Amazing Hubble</h3>
-                                  </a>
-                                  <p>02 Hours ago</p>
-                              </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post3.jpg" alt="post">                              
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>Astronomy Or Astrology</h3>
-                                  </a>
-                                  <p>03 Hours ago</p>
-                              </div>
-                          </div>
-                          <div class="media post_item">
-                              <img src="img/blog/popular-post/post4.jpg" alt="post">
-                              <div class="media-body">
-                                  <a href="single-blog.html">
-                                      <h3>Asteroids telescope</h3>
-                                  </a>
-                                  <p>01 Hours ago</p>
-                              </div>
-                          </div>
+                            
+                              {% endfor %}
+                            </div>
+                        
+                         
                       </aside>
                      
                   </div>

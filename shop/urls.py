@@ -26,5 +26,9 @@ urlpatterns = [
     url(r'^$', views.product_list, name='product_list'),
     url(r'^(?P<category_slug>[-\w]+)/$', views.product_list, name='product_list_by_category'),
     url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.product_detail, name='product_detail'),
-    path('add-to-cart/<slug>/', views.add_to_cart, name='add-to-cart'),
+    path('/add-to-cart/<slug>/', views.add_to_cart, name='add-to-cart'),
+    path('/order/<slug>' , views.order , name='order'),
+    path('/order/shop/makeorder' , views.makeorder , name='makeorder'),
+     path('/shop/<productname>/accounts/login' , views.login , name='login'),
+
 ]

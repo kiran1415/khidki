@@ -24,6 +24,18 @@
   <!-- main css -->
   <link rel="stylesheet" href="{%static 'css/style.css' %}" />
   <link rel="stylesheet" href="{%static 'css/responsive.css' %}" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157788051-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-157788051-1');
+</script>
+
+
 </head>
 
 <body>
@@ -34,8 +46,8 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="float-left">
-              <p>Phone: +01 256 25 235</p>
-              <p>email: contact@khidkistudio.com</p>
+              <p>Phone: +919825040056</p>
+             Email: contact@khidkistudio.com
             </div>
           </div>
           <div class="col-lg-5">
@@ -43,7 +55,7 @@
               <ul class="right_side">
                
                 <li>
-                  <a href="/accounts/logout">
+                  <a href="/offers">
                     offers
                    </a>
                   
@@ -57,7 +69,7 @@
               
                 </li>
                 <li>
-                <a href="/accounts/login">
+                <a href="#">
                   special Products
                 </a>
              
@@ -92,18 +104,19 @@
                   <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {% if url_name == 'shop:' %}active{% endif %}">
                     <a class="nav-link" href="/shop">SHOP</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/blog">Blog</a>
+                  <li class="nav-item{% if url_name == '/blog' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'blog:blog_list' %}">Blog</a>
                   </li>
                   
-                  <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
+                  
+                  <li class="nav-item{% if url_name == 'about' %}active{% endif %}">
+                    <a class="nav-link" href="/about">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/about">About Us</a>
+                    <a class="nav-link" href="{% url 'contact:submit' %}">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -134,30 +147,12 @@
                 {% if user.is_authenticated %}
               
                    <div class="dropdown" style="margin-top: 20%;">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">
-                     {{  request.user.first_name }} <span class="caret"></span>
+                 <button class="btn btn-default dropdown-toggle" style="background-color: #64FFB1;" type="button" data-toggle="dropdown" data-hover="dropdown">
+                  <i class="fa fa-user"></i>    My Account <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li class="dropdown">
-                        <a href="#">One more dropdown</a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li class="dropdown">
-                            <a href="#">One more dropdown</a>
-                            <ul class="dropdown-menu">
-                            ...
-                            </ul>
-                          </li>
-                          <li><a href="#">Something else here</a></li>
-                          <li><a href="#">Separated link</a></li>
-                         </ul>
-                      </li>
-                      <li><a href="#">Something else here</a></li>
-                      <li><a href="#">Separated link</a></li>
-                      <li><a href="accounts/logout">logout</a>
+                    <ul class="dropdown-menu" style="background-color: #64FFB1;">
+                    
+                      <li><a href="{% url 'accounts:logout' %}">logout</a>
                     </ul>
                   </div>
                 </li>
@@ -189,13 +184,19 @@
   </header>
   <!--================Header Menu Area =================-->
 
-
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+      <li{% if message.tags %} style="text-align:center ;" class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
 
 
   <!--================model section =================-->
+  {% if user.is_authenticated ==  False %}
 
-
- <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="loginmodel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="margin-left: 35%;color: #64FFB1;">
@@ -207,7 +208,7 @@
       </div>
       <div class="modal-body">
         
-            <form action="accounts/login" method="POST" >
+            <form action="{% url 'accounts:login' %}" method="POST" >
                 {% csrf_token %}
                
                 
@@ -322,7 +323,9 @@
     </div>
   </div>
 </div>
+{% else %}
 
+{%  endif %}
 
     {% block content%}
 
@@ -337,28 +340,28 @@
             <div class="col-lg-2 col-md-6 single-footer-widget">
               <h4>Top Products</h4>
               <ul>
-                <li><a href="#">Managed Website</a></li>
-                <li><a href="#">Manage Reputation</a></li>
-                <li><a href="#">Power Tools</a></li>
-                <li><a href="#">Marketing Service</a></li>
+                <li><a href="#">Nature Spirit Wall Vase</a></li>
+                <li><a href="#">Radiant Boat Art</a></li>
+                <li><a href="#">Vintage Elegance</a></li>
+                <li><a href="#">Enchanted Wall Decor</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Brand Assets</a></li>
-                <li><a href="#">Investor Relations</a></li>
-                <li><a href="#">Terms of Service</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/offers">Offers</a></li>
+                <li><a href="/terms">Terms of conditions</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
               <h4>Features</h4>
               <ul>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Brand Assets</a></li>
-                <li><a href="#">Investor Relations</a></li>
-                <li><a href="#">Terms of Service</a></li>
+                <li><a href="/tracking">Tracking</a></li>
+                <li><a href="#">Fast Delivery</a></li>
+                <li><a href="#">Secure Pyments</a></li>
+                <li><a href="#">Easy Return & Replacement</a></li>
               </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
@@ -390,7 +393,7 @@
           </div>
           <div class="footer-bottom row align-items-center">
             <p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="http://idesirecommunications.com/" target="_blank">khidkistudio</a>
     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
             <div class="col-lg-4 col-md-12 footer-social">
               <a href="#"><i class="fa fa-facebook"></i></a>

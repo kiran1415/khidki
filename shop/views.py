@@ -2,9 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, get_object_or_404 , redirect
-from .models import Category, Product
-from cart.models import  CartItem
-# cart.forms import CartAddProductForm
+from .models import Category, Product , Liteorder
+
+
+
 
 
 
@@ -23,16 +24,6 @@ def product_list(request, category_slug=None):
     }
     return render(request, 'category.html', context)
 
-
-#def product_detail(request, id, slug):
- #   product = get_object_or_404(Product, id=id, slug=slug, available=True)
-  #  cart_product_form = CartAddProductForm()
-   # context = {
-    #    'product': product,
-     #   'cart_product_form': cart_product_form
-    #}
-    #return render(request, 'single-product.html', context)
-
 def product_detail(request , id , slug):
     product = get_object_or_404(Product  , id=id , slug=slug  , available=True)
     context = {
@@ -42,10 +33,32 @@ def product_detail(request , id , slug):
 
 
 def add_to_cart(request , slug):
-    product = get_object_or_404(Product , slug=slug )
-    cart_item , created = CartItem.objects.get_or_create(
-        product = product ,
-        user   =  request.user ,
-        ordered = False
-    )
-    return redirect('shop:product_list')
+    return render(request , 'cart.html')
+
+
+def order(request , slug):
+    product = get_object_or_404(Product  , slug=slug)
+    context = {
+       'product':product  
+    }
+    return render(request , 'order.html' , context)
+
+
+
+def makeorder(request):
+    
+    if request.method =='POST':
+        name = request.POST['product_name']
+        price  = request.POST['product_price']
+        quantity = request.POST['quantity']
+        userfirstname = request.POST['userfirst_name']
+        userlastname  = request.POST['userlast_name']
+        usercontact = request.POST['usercontact']
+        useremail = request.POST['useremail']
+        userpicode = request.POST['userpincode']
+        useraddress = request.POST['useraddress']
+
+        order = Liteorder.objects.create(name=name , price=price , quantity=quantity , userfirstname=userfirstname , userlastname=userlastname , usercontact=usercontact,useremail=useremail ,userpicode=userpicode,useraddress= useraddress)
+        return redirect('/thankyou')
+def login(request):
+    return reverse('accounts:login')

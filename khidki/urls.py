@@ -21,11 +21,13 @@ from django.conf.urls import  handler404
 from home.views import  view_404
 
 urlpatterns = [
-    path('contact' , include('contact.urls')),
+     path('contact' , include('contact.urls')),
     path('blog' , include('blog.urls')),
+    path('contactus' , include('contactus.urls')),
     path('accounts/' , include('accounts.urls')),
     path('cart' , include('cart.urls')),
     path('shop' , include('shop.urls')),
+    path('order' , include('order.urls')),
     path('' , include('home.urls')),
     path('admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

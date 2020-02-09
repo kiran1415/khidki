@@ -13,8 +13,8 @@
               <p>Very us move be blessed multiply night</p>
             </div>
             <div class="page_link">
-              <a href="index.html">Home</a>
-              <a href="single-product.html">Product Details</a>
+              <a href="/">Home</a>
+              <a href="#">Product Details</a>
             </div>
           </div>
         </div>
@@ -34,16 +34,7 @@
           >
             <ol class="carousel-indicators">
 
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="0"
-                class="active"
-              >
-                <img
-                  src=""
-                  alt=""
-                />
-              </li>
+              
              
 
             </ol>
@@ -63,8 +54,8 @@
       </div>
       <div class="col-lg-5 offset-lg-1">
         <div class="s_product_text">
-          <h3>Faded SkyBlu Denim Jeans</h3>
-          <h2>$149.99</h2>
+          <h3>{{product.name}}</h3>
+          <h2>INR {{product.price}}</h2>
           <ul class="list">
             <li>
               <a class="active" href="#">
@@ -76,11 +67,10 @@
             </li>
           </ul>
           <p>
-            Mill Oil is an innovative oil filled radiator with the most
-            modern technology. If you are looking for something that can
-            make your interior look awesome, and at the same time give you
-            the pleasant warm feeling during the winter.
+           {{product.description}}
           </p>
+
+          <!--
           <div class="product_count">
             <label for="qty">Quantity:</label>
             <input
@@ -107,8 +97,9 @@
               <i class="lnr lnr-chevron-down"></i>
             </button>
           </div>
+        -->
           <div class="card_area">
-            <a class="main_btn" href="#">Add to Cart</a>
+            <a class="main_btn" href="{{ product.order}}" style="background-color: #64FFB1;" class="btn btn-default ml-3 mt-3">BUY NOW</a>
             <a class="icon_btn" href="#">
               <i class="lnr lnr lnr-diamond"></i>
             </a>
@@ -184,34 +175,9 @@
             aria-labelledby="home-tab"
           >
             <p>
-              Beryl Cook is one of Britain’s most talented and amusing artists
-              .Beryl’s pictures feature women of all shapes and sizes enjoying
-              themselves .Born between the two world wars, Beryl Cook eventually
-              left Kendrick School in Reading at the age of 15, where she went
-              to secretarial school and then into an insurance office. After
-              moving to London and then Hampton, she eventually married her next
-              door neighbour from Reading, John Cook. He was an officer in the
-              Merchant Navy and after he left the sea in 1956, they bought a pub
-              for a year before John took a job in Southern Rhodesia with a
-              motor company. Beryl bought their young son a box of watercolours,
-              and when showing him how to use it, she decided that she herself
-              quite enjoyed painting. John subsequently bought her a child’s
-              painting set for her birthday and it was with this that she
-              produced her first significant work, a half-length portrait of a
-              dark-skinned lady with a vacant expression and large drooping
-              breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
+            {{product.description}}
             </p>
-            <p>
-              It is often frustrating to attempt to plan meals that are designed
-              for one. Despite this fact, we are seeing more and more recipe
-              books and Internet websites that are dedicated to the act of
-              cooking for one. Divorce and the death of spouses or grown
-              children leaving for college are all reasons that someone
-              accustomed to cooking for more than one would suddenly need to
-              learn how to adjust all the cooking practices utilized before into
-              a streamlined plan of cooking that is more efficient for one
-              person creating less
-            </p>
+
           </div>
           <div
             class="tab-pane fade"
@@ -299,135 +265,9 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="comment_list">
-                  <div class="review_item">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-1.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <h5>12th Feb, 2017 at 05:56 pm</h5>
-                        <a class="reply_btn" href="#">Reply</a>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
-                  <div class="review_item reply">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-2.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <h5>12th Feb, 2017 at 05:56 pm</h5>
-                        <a class="reply_btn" href="#">Reply</a>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
-                  <div class="review_item">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-3.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <h5>12th Feb, 2017 at 05:56 pm</h5>
-                        <a class="reply_btn" href="#">Reply</a>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="review_box">
-                  <h4>Post a comment</h4>
-                  <form
-                    class="row contact_form"
-                    action="contact_process.php"
-                    method="post"
-                    id="contactForm"
-                    novalidate="novalidate"
-                  >
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          name="name"
-                          placeholder="Your Full name"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          name="email"
-                          placeholder="Email Address"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="number"
-                          name="number"
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea
-                          class="form-control"
-                          name="message"
-                          id="message"
-                          rows="1"
-                          placeholder="Message"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12 text-right">
-                      <button
-                        type="submit"
-                        value="submit"
-                        class="btn submit_btn"
-                      >
-                        Submit Now
-                      </button>
-                    </div>
-                  </form>
+
+
+               comming with this in short
                 </div>
               </div>
             </div>
@@ -441,239 +281,11 @@
             <div class="row">
               <div class="col-lg-6">
                 <div class="row total_rate">
-                  <div class="col-6">
-                    <div class="box_total">
-                      <h5>Overall</h5>
-                      <h4>4.0</h4>
-                      <h6>(03 Reviews)</h6>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="rating_list">
-                      <h3>Based on 3 Reviews</h3>
-                      <ul class="list">
-                        <li>
-                          <a href="#"
-                            >5 Star
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            >4 Star
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            >3 Star
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            >2 Star
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
-                        </li>
-                        <li>
-                          <a href="#"
-                            >1 Star
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i> 01</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                  not yet you become first
+                  
                 </div>
-                <div class="review_list">
-                  <div class="review_item">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-1.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
-                  <div class="review_item">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-2.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
-                  <div class="review_item">
-                    <div class="media">
-                      <div class="d-flex">
-                        <img
-                          src="img/product/single-product/review-3.png"
-                          alt=""
-                        />
-                      </div>
-                      <div class="media-body">
-                        <h4>Blake Ruiz</h4>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                      </div>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                      ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="review_box">
-                  <h4>Add a Review</h4>
-                  <p>Your Rating:</p>
-                  <ul class="list">
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-star"></i>
-                      </a>
-                    </li>
-                  </ul>
-                  <p>Outstanding</p>
-                  <form
-                    class="row contact_form"
-                    action="contact_process.php"
-                    method="post"
-                    id="contactForm"
-                    novalidate="novalidate"
-                  >
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name"
-                          name="name"
-                          placeholder="Your Full name"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          name="email"
-                          placeholder="Email Address"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="number"
-                          name="number"
-                          placeholder="Phone Number"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea
-                          class="form-control"
-                          name="message"
-                          id="message"
-                          rows="1"
-                          placeholder="Review"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12 text-right">
-                      <button
-                        type="submit"
-                        value="submit"
-                        class="btn submit_btn"
-                      >
-                        Submit Now
-                      </button>
-                    </div>
-                  </form>
+              
+                  
                 </div>
               </div>
             </div>

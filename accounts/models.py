@@ -15,12 +15,10 @@ class Profile(models.Model):
         (Femal, 'Femal'),
         (Other, 'Other'),
     )
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User,  on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    products = models.ManyToManyField(Product ,  blank=True)
     mobile_no = models.CharField(max_length=12)
-    gender = models.PositiveSmallIntegerField(choices=GENDER_CHOICES, null=True, blank=True)
     shipping_address = models.CharField(max_length=300)
     billing_address = models.CharField(max_length=300)
 

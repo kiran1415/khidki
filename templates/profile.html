@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<div class="section-top-border">
+    <h1 style="text-align: center;">Profile</h1>
+    <div class="row" style="margin: 5%;">
+        <div class="col-lg-6 col-md-6" >
+           
+            <form action="{%  url 'accounts:update'  %}">
+                <div class="mt-10">
+                    <input type="text" name="first_name" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'"
+                     required class="single-input">
+                </div>
+               
+                <div class="mt-10">
+                    <input type="email" name="Email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="text" name="Mobile_no" placeholder="Contact No" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contact No'"
+                     required class="single-input">
+                </div>
+               
+                
+                <div class="mt-10">
+                    <input type="text" name="City" placeholder="City" onfocus="this.placeholder = ''" onblur="this.placeholder = 'city'"
+                     required class="single-input">
+                </div>
+
+               
+           
+        </div>
+        <div class="col-lg-6 col-md-6 mt-sm-30 element-wrap">
+            
+     
+            <div class="mt-10">
+                <input type="text" name="Country" placeholder="Country" onfocus="this.placeholder = ''" onblur="this.placeholder = 'country'"
+                 required class="single-input">
+            </div>
+
+               
+               
+
+                <div class="mt-10">
+                    <textarea class="single-textarea" name="ba" placeholder="Billing address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing address'"
+                     required></textarea>
+                </div>
+                <div class="mt-10">
+                    <textarea class="single-textarea" name="sa" placeholder="Shippinng  address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Shippinng  address'"
+                     required></textarea>
+                </div>
+               
+                <div class="mt-10">
+                    <button type="submit" style="background-color: #64FFB1;" class="btn btn-default ml-3  mt-3"  >
+                  UPDATE
+                       </button>
+                </div>
+               
+            </form>
+            
+         
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

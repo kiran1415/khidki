@@ -1,0 +1,68 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+    <div class="row" style="margin: 5%;">
+        <div class="col-lg-8 col-md-8">
+            <h3 class="mb-30 title_color" style="text-align: center;">Plese fill Details</h3>
+            <form action="shop/makeorder" method="POST">
+                
+                {% csrf_token %}
+                <div class="mt-10">
+                    <input type="text" name="product_name" readonly placeholder="{{product.name}}"  value="{{product.name}}"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="text" name="product_price" readonly value="{{product.price}}" placeholder="{{product.price}}"  
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="number" name="quantity" value="1" placeholder="1" readonly
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="text" name="userfirst_name" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'"
+                     required class="single-input">
+                </div>
+             
+                <div class="mt-10">
+                    <input type="text" name="userlast_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="text" name="usercontact" placeholder="Contact Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Contact Number'"
+                     required class="single-input">
+                </div>
+                <div class="mt-10">
+                    <input type="email" name="useremail" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
+                     required class="single-input">
+                </div>
+                <div class="input-group-icon mt-10">
+                    <div class="icon">
+                        <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                    </div>
+                    <input type="text" name="userpincode" placeholder="Pincode" onfocus="this.placeholder = ''" onblur="this.placeholder = 'pincode'"
+                     required class="single-input">
+                </div>
+               
+                
+
+                <div class="mt-10">
+                    <textarea class="single-textarea" name="useraddress"  placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'"
+                     required></textarea>
+                </div>
+                
+                <div class="mt-10">
+                   <input type="submit"  style="background-color: #64FFB1;" class="btn btn-default  mt-3">
+                </div>
+            
+            </form>
+        </div>
+      
+        </div>
+    </div>
+
+</div>
+</div>
+{%  endblock  %}

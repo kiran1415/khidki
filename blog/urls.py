@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 
 
 from . import views
-
+app_name = 'blog'
 urlpatterns = [
-    #path('', views.default, name='default'),
-    path('', views.blog_list, name='blog_list')
-    #path('home', views.home, name='index'),
+   
+     url(r'^$', views.blog_list, name='blog_list'),
+    #url(r'^(?P<category_slug>[-\w]+)/$', views.product_list, name='product_list_by_category'),
+
+    url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.blog_detail, name='blog_detail'),
+    
 
    
    
