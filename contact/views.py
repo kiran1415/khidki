@@ -2,7 +2,10 @@ from django.shortcuts import render , redirect
 from .models import Contact
 # Create your views here.
 def submit(request):
-    return render(request , 'contact.html')
+    context = {
+        'contact_page':'active'
+    }
+    return render(request , 'contact.html',context)
 
 def query(request):
     if request.method  == 'POST':

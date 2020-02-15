@@ -36,6 +36,7 @@
 </script>
 
 
+
 </head>
 
 <body>
@@ -46,8 +47,9 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="float-left">
-              <p>Phone: +919825040056</p>
-             Email: contact@khidkistudio.com
+              <p style="text-transform: capitalize;">Phone: +919825040056</p>
+              <p style="text-transform: capitalize;">Email: contact@khidkistudio.com</p>
+              
             </div>
           </div>
           <div class="col-lg-5">
@@ -101,22 +103,22 @@
             <div class="row w-100 mr-0">
               <div class="col-lg-7 pr-0">
                 <ul class="nav navbar-nav center_nav pull-right">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                  <li class="nav-item {{home_page}} ">
+                    <a class="nav-link"  style="text-transform: capitalize;" href="/">Home</a>
                   </li>
-                  <li class="nav-item {% if url_name == 'shop:' %}active{% endif %}">
-                    <a class="nav-link" href="/shop">SHOP</a>
+                  <li class="nav-item {{product_page}}">
+                    <a class="nav-link" style="text-transform: capitalize;" href="/shop">Shop</a>
                   </li>
-                  <li class="nav-item{% if url_name == '/blog' %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'blog:blog_list' %}">Blog</a>
+                  <li class="nav-item {{blog_page}}">
+                    <a class="nav-link"  style="text-transform: capitalize;" href="{% url 'blog:blog_list' %}">Blog</a>
                   </li>
                   
                   
-                  <li class="nav-item{% if url_name == 'about' %}active{% endif %}">
-                    <a class="nav-link" href="/about">About Us</a>
+                  <li class="nav-item {{about_page}}">
+                    <a class="nav-link" style="text-transform: capitalize;" href="/about">About Us</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact:submit' %}">Contact</a>
+                  <li class="nav-item {{contact_page}}">
+                    <a class="nav-link" style="text-transform: capitalize;" href="{% url 'contact:submit' %}">Contact</a>
                   </li>
                 </ul>
               </div>
@@ -147,7 +149,7 @@
                 {% if user.is_authenticated %}
               
                    <div class="dropdown" style="margin-top: 20%;">
-                 <button class="btn btn-default dropdown-toggle" style="background-color: #64FFB1;" type="button" data-toggle="dropdown" data-hover="dropdown">
+                 <button class="btn btn-default btn-sm dropdown-toggle" style="background-color: #64FFB1;" type="button" data-toggle="dropdown" data-hover="dropdown">
                   <i class="fa fa-user"></i>    My Account <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" style="background-color: #64FFB1;">
@@ -159,7 +161,7 @@
                 {% else %}
                 
                   <li class="nav-item" >
-                  <button type="button" style="background-color: #64FFB1;" class="btn btn-default ml-3 mt-3" data-toggle="modal" data-target="#loginmodel">
+                  <button type="button" style="background-color: #64FFB1;" id="login" class="btn btn-default btn-sm ml-3 mt-4" data-toggle="modal" data-target="#loginmodel">
                     Login
                    </button>
 
@@ -167,7 +169,7 @@
                     </li>
 
                     <li class="nav-item">
-                      <button type="button" style="background-color: #64FFB1;" class="btn btn-default ml-3  mt-3"  data-toggle="modal" data-target="#registermodel">
+                      <button type="button" style="background-color: #64FFB1;" class="btn btn-default btn-sm ml-3  mt-4"  data-toggle="modal" data-target="#registermodel">
                         Register
                        </button>
     
@@ -194,7 +196,7 @@
 
 
   <!--================model section =================-->
-  {% if user.is_authenticated ==  False %}
+  {% if user.is_authenticated ==  False  %}
 
  <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="loginmodel" aria-hidden="true">
   <div class="modal-dialog" role="document">

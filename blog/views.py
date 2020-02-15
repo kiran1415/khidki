@@ -10,6 +10,7 @@ def blog_list(request, category_slug=None):
         blogs = Blog.objects.filter(category=category)
 
     context = {
+        'blog_page':'active',
         'category': category,
         'categories': categories,
         'blogs':blogs
@@ -22,6 +23,7 @@ def blog_detail(request , id , slug):
     blog = get_object_or_404(Blog  , id=id , slug=slug)
     blogs = Blog.objects.all()
     context = {
+        'blog_page':'active',
         'blog':blog,
         'blogs':blogs,
         'categories':categories

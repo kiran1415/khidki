@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from shop.models import  Product
-from shop.models import Category
+from shop.models import Category 
+from .models import Terms
 from django.shortcuts import get_object_or_404
 # Create your views here.
 #def default(request):
@@ -15,10 +16,13 @@ def index(request , category_slug=None):
         products = Product.objects.filter(category=category)
 
     context = {
+        'home_page':'active',
         'category': category,
         'categories': categories,
         'products': products
     }
+ 
+
     return render(request , 'index.html', context)
 
 def view_404(request):
@@ -28,7 +32,11 @@ def home(request , category_slug=None):
     return render(request , 'home.html')
 
 def about(request):
-    return render(request , 'about.html')
+    context = {
+        
+        "about_page":"active"
+        }
+    return render(request , 'about.html' , context)
 
 
 def tracking(request):
@@ -47,4 +55,9 @@ def offers(request):
     return render(request , 'offers.html')
 
 def terms(request):
-    return render(request  , 'terms.html')
+    terms = Terms.objects.all()
+    context = {
+        'terms':terms,
+        "about_page":"active"
+        }
+    return render(request  , 'terms.html',context)

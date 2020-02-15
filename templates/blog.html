@@ -10,16 +10,14 @@
                     {% for blog in blogs%}
                       <article class="blog_item">
                         <div class="blog_item_img">
+                          <a href="{{blog.get_absolute_url}}">
                           <img class="card-img rounded-0" src="{{blog.image.url}}" alt="">
-                          <a href="#" class="blog_item_date">
-                            <h3>{{blog.created_at}}</h3>
-                           
-                          </a>
+                        </a>
                         </div>
                         
                         <div class="blog_details">
                             <a class="d-inline-block" href="{{blog.get_absolute_url}}">
-                                <h2>{{blog.name}}</h2>
+                                <h2 style="color: #000000 ;text-transform: capitalize;">{{blog.name}}</h2>
                             </a>
                             <p>{{blog.description}}</p>
                             <ul class="blog-info-link">
@@ -154,7 +152,9 @@
                                 </div>
                               </div>
                             </div>
-                            <button class="main_btn rounded-0 w-100" type="submit">Search</button>
+                           
+                       
+                            <button class="main_btn rounded-0 w-100" style="background-color: #64FFB1;color: black;" type="submit">Search</button>
                           </form>
                       </aside>
 
@@ -164,7 +164,7 @@
                           {% for c in categories %}
                             <li>
                                 <a href="#" class="d-flex">
-                                    <p>{{c.name}}</p>
+                                    <p style="text-transform: capitalize;">{{c.name}}</p>
                                     <p></p>
                                 </a>
                             </li>
@@ -206,11 +206,11 @@
 
                       <aside class="single_sidebar_widget popular_post_widget">
                           <h3 class="widget_title">Recent Post</h3>
-                          {% for blog in blogs %}
+                         
                           <div class="media post_item">
-                             
+                            {% for blog in blogs %}    
                               <div class="media-body">
-                                  <a href="single-blog.html">
+                                  <a href="{{blog.get_absolute_url}}">
                                       <h3>{{blog.name}}</h3>
                                   </a>
                                   <p>January 13, 2019</p>

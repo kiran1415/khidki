@@ -18,6 +18,7 @@ def product_list(request, category_slug=None):
         products = Product.objects.filter(category=category)
 
     context = {
+        'product_page':'active',
         'category': category,
         'categories': categories,
         'products': products
@@ -25,8 +26,10 @@ def product_list(request, category_slug=None):
     return render(request, 'category.html', context)
 
 def product_detail(request , id , slug):
+
     product = get_object_or_404(Product  , id=id , slug=slug  , available=True)
     context = {
+        'product_page':'active',
         'product':product
     }
     return render(request , 'single-product.html' , context)
