@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, get_object_or_404 , redirect
-from .models import Category, Product , Liteorder
+from .models import Category, Product 
 
 
 
@@ -44,7 +44,7 @@ def order(request , slug):
     context = {
        'product':product  
     }
-    return render(request , 'order.html' , context)
+    return render(request , 'checkout.html' , context)
 
 
 
@@ -61,7 +61,7 @@ def makeorder(request):
         userpicode = request.POST['userpincode']
         useraddress = request.POST['useraddress']
 
-        order = Liteorder.objects.create(name=name , price=price , quantity=quantity , userfirstname=userfirstname , userlastname=userlastname , usercontact=usercontact,useremail=useremail ,userpicode=userpicode,useraddress= useraddress)
+        #order = Liteorder.objects.create(   name=name , price=price , quantity=quantity , userfirstname=userfirstname , userlastname=userlastname , usercontact=usercontact,useremail=useremail ,userpicode=userpicode,useraddress= useraddress)
         return redirect('/thankyou')
 def login(request):
     return reverse('accounts:login')

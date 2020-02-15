@@ -58,17 +58,21 @@ class Product(models.Model):
 
 
 class Liteorder(models.Model):
+    userfirstname = models.CharField(max_length=100, db_index=True)
+    userlastname = models.CharField(max_length=100, db_index=True)
+    compneyname = models.CharField(max_length=100 , db_index=True)
+    usercontact = models.CharField(max_length=100, db_index=True)
+    useremail = models.CharField(max_length=100, db_index=True)
+    county = models.CharField(max_length=50 , db_index=True)
+    useraddressline1 = models.CharField(max_length=100, db_index=True)
+    useraddressline2 = models.CharField(max_length=100, db_index=True)
+    city = models.CharField(max_length=50 , db_index=True)
+    userpicode = models.CharField(max_length=100, db_index=True)
+    note = models.TextField(max_length=500 , db_index=True)
     name = models.CharField(max_length=100, db_index=True)
     price = models.DecimalField(max_digits=10, decimal_places=2 , null=True)
     quantity = models.PositiveIntegerField( null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='orders/%Y/%m/%d', blank=True)
-    userfirstname = models.CharField(max_length=100, db_index=True)
-    userlastname = models.CharField(max_length=100, db_index=True)
-    usercontact = models.CharField(max_length=100, db_index=True)
-    useremail = models.CharField(max_length=100, db_index=True)
-    userpicode = models.CharField(max_length=100, db_index=True)
-    useraddress = models.CharField(max_length=100, db_index=True)
 
 
     def __str__(self):
