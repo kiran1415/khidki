@@ -170,6 +170,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 #managing media
 
-MEDIA_URL = '/' 
+MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
 
