@@ -25,7 +25,6 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-
 ALLOWED_HOSTS = ['localhost','khidkistudio.com','159.65.173.101','127.0.0.1']
 
 
@@ -171,5 +170,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 #managing media
 
 MEDIA_URL = '/media/' 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/media/products/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
 
