@@ -26,7 +26,7 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['localhost','khidkistudio.com','127.0.0.1' '167.172.154.49']
+ALLOWED_HOSTS = ['167.172.154.49']
 
 
 EMAIL_USE_TLS = True
