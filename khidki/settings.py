@@ -68,7 +68,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-kiran@22
 
 ROOT_URLCONF = 'khidki.urls'
 AUTH_PROFILE_MODULE = 'accounts.Profile'
