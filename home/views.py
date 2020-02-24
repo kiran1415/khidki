@@ -48,7 +48,7 @@ def pagenotfound(request):
 
 
 def thankyou(request):
-    return  render(request , 'thankyou.html')
+    return  render(request , 'thank.html')
 
 
 def offers(request):

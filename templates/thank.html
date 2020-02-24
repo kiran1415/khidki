@@ -1,0 +1,153 @@
+
+
+
+
+  <!----default page configuration-->
+
+  {% load static %}
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>site is underconstruction</title>
+     <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="{%static 'img/favicon.png' %}" type="image/png" />
+  <title>Eiser ecommerce</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{%static 'css/bootstrap.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/linericon/style.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/themify-icons.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/flaticon.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/owl-carousel/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/lightbox/simpleLightbox.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/nice-select/css/nice-select.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/animate-css/animate.css' %}" />
+  <link rel="stylesheet" href="{%static 'vendors/jquery-ui/jquery-ui.css' %}" />
+  <!-- main css -->
+  <link rel="stylesheet" href="{%static 'css/style.css' %}" />
+  <link rel="stylesheet" href="{%static 'css/responsive.css' %}" />
+</head>
+   <body>
+   
+    
+      
+    <div class="container">
+        <div class="row" style="padding-top: 10%;">
+          <div class="mx-auto">
+          <img src="{%static 'img/Asset 1.svg' %}" height="100%" width="100%" >
+          </div>
+         
+        </div>
+
+        <div class="row" style="margin-top: 3%;">
+            <div class="mx-auto">
+                      <p class="h2" style="color: black;text-align:center" >Exceptional Product for Exceptional Spaces</p>
+                      <p  style="color: black;text-align:center" >Thank you for order our Executive will contact soon</p>
+                        
+                <div class="row" style="margin-left: 28%;margin-top:10%">
+              
+                      <a href="https://www.instagram.com/khidkistudio/">
+                          <img alt="Qries" src="{%static 'img/Asset 3.svg' %}"
+                          width=150" height="70">
+                      </a>
+                      <a href="https://www.facebook.com/Khidki-103963297805584/">
+                          <img alt="Qries" src="{%static 'img/Asset 2.svg' %}"
+                          width=100" height="70">
+                      </a>
+              
+                </div>
+                <div class="row" style="margin-top: 5%;">
+                  <h5  style="margin-left: 35%;">contact@khidkistudio.com</h5>
+          
+                </div>
+               
+              </div>
+           
+          </div>
+         
+
+
+      </div>
+    
+
+
+      
+ <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <div class="mx-auto">
+            <img src="{%static 'img/Asset 1.svg' %}" height="50%" style="margin-left: 55%;" width="50%" >
+            </div>
+          
+          <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+              <form action="login" method="POST" >
+                  {% csrf_token %}
+                 
+                  
+                  <div class="mt-10">
+                      <input type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
+                       required class="single-input">
+                  </div>
+                  <div class="mt-10">
+                      <input type="password" name="password" placeholder="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'"
+                       required class="single-input">
+                  </div>
+                  <div class="button-group-area mt-40">
+                    <button type="submit" name="register" placeholder="Register" class="genric-btn success circle arrow">Login</button>
+                   </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <a href="" style="text-align: center;color: #64FFB1;">Forgot password Here</a>
+        
+          <button type="button" class="btn btn-primary" data-dismiss="modal" class="btn btn-primary " data-toggle="modal" data-target="#registermodel" >Register Here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+
+      <div>
+
+        
+
+        </div>
+
+      <script src="{%static 'js/jquery-3.2.1.min.js' %}"></script>
+  
+      <script src="{%static 'js/popper.js' %}"></script>
+      <script src="{%static 'js/bootstrap.min.js' %}"></script>
+      <script src="{%static 'js/stellar.js' %}"></script>
+      <script src="{%static 'vendors/lightbox/simpleLightbox.min.js' %}"></script>
+      <script src="{%static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+      <script src="{%static 'vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+      <script src="{%static 'vendors/isotope/isotope-min.js' %}"></script>
+      <script src="{%static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+      <script src="{%static 'js/jquery.ajaxchimp.min.js' %}"></script>
+      <script src="{%static 'vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+      <script src="{%static 'vendors/counter-up/jquery.counterup.js' %}"></script>
+      <script src="{%static 'js/mail-script.js' %}"></script>
+      <script src="{%static 'js/theme.js' %}"></script>
+
+  </body>
+</html>

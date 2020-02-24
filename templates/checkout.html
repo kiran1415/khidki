@@ -48,89 +48,86 @@
                 novalidate="novalidate"
               >
               {% csrf_token %}
+              <div class="col-md-12 form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="company"
+                  name="product_name"
+                  placeholder="{{product.name}}"
+                  value="{{product.name}}" readonly
+                />
+              </div>
                 <div class="col-md-6 form-group p_star">
                   <input
                     type="text"
                     class="form-control"
                     id="first"
-                    name="name"
-                  />
-                  <span
-                    class="placeholder"
-                    data-placeholder="First name"
-                  ></span>
+                    name="first_name"
+                    placeholder="First Name"
+                  required/>
+                
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <input
                     type="text"
                     class="form-control"
                     id="last"
-                    name="name"
-                  />
-                  <span class="placeholder" data-placeholder="Last name"></span>
+                    name="last_name"
+                    placeholder="Last Name"
+                    />
+                
                 </div>
-                <div class="col-md-12 form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="company"
-                    name="company"
-                    placeholder="Company name"
-                  />
-                </div>
+                
                 <div class="col-md-6 form-group p_star">
                   <input
                     type="text"
                     class="form-control"
                     id="number"
-                    name="number"
-                  />
-                  <span
-                    class="placeholder"
-                    data-placeholder="Phone number"
-                  ></span>
+                    name="phone_number"
+                 placeholder="Contact Number"
+                    />
+                 
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <input
                     type="text"
                     class="form-control"
                     id="email"
-                    name="compemailany"
-                  />
-                  <span
-                    class="placeholder"
-                    data-placeholder="Email Address"
-                  ></span>
+                    name="email"
+                placeholder="Email"
+                    />
+                
                 </div>
-                <div class="col-md-12 form-group p_star">
-                  <select class="country_select">
-                    <option value="1">India</option>
-                    
-                  </select>
+                <div class="col-md-12 form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="company"
+                    name="country"
+                    placeholder="india"
+                    value="India" readonly
+                  />
                 </div>
                 <div class="col-md-12 form-group p_star">
                   <input
                     type="text"
                     class="form-control"
                     id="add1"
-                    name="add1"
-                  />
-                  <span
-                    class="placeholder"
-                    data-placeholder="Address line 01"
-                  ></span>
+                    name="add_1"
+                  placeholder="Address line 01"
+                    />
+                  
                 </div>
                 <div class="col-md-12 form-group p_star">
                   <input
                     type="text"
                     class="form-control"
                     id="add2"
-                    name="add2"
-                  />
-                  <span
-                    class="placeholder"
-                    data-placeholder="Address line 02"
-                  ></span>
+                    name="add_2"
+                  placeholder="Address line 02"
+                    />
+                  
                 </div>
                 <div class="col-md-12 form-group p_star">
                   <input
@@ -138,8 +135,9 @@
                     class="form-control"
                     id="city"
                     name="city"
-                  />
-                  <span class="placeholder" data-placeholder="Town/City"></span>
+                  placeholder="City"
+                    />
+                  
                 </div>
                 
                 <div class="col-md-12 form-group">
@@ -147,7 +145,7 @@
                     type="text"
                     class="form-control"
                     id="zip"
-                    name="zip"
+                    name="zip_code"
                     placeholder="Postcode/ZIP"
                   />
                 </div>
@@ -180,7 +178,7 @@
                   </li>
                   <li>
                     <a href="#"
-                    >{{product.name}}
+                    >{{product.name}} 
                       <span class="middle">x 01</span>
                       <span class="last"> &#x20b9 {{product.price}}</span>
                     </a>

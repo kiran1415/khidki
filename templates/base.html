@@ -71,9 +71,9 @@
               
                 </li>
                 <li>
-                <a href="#">
-                  special Products
-                </a>
+                  <a href="/cart" class="icons">
+                    <i class="ti-shopping-cart"></i> Mycart
+                  </a>
              
                  
                 </li>
@@ -145,7 +145,7 @@
                       <i class="ti-user" aria-hidden="true"></i>
                     </a>
                   </li>
-                -->
+                
                 {% if user.is_authenticated %}
               
                    <div class="dropdown" style="margin-top: 20%;">
@@ -154,7 +154,7 @@
                     </button>
                     <ul class="dropdown-menu" style="background-color: #64FFB1;">
                     
-                      <li><a href="{% url 'accounts:logout' %}">logout</a>
+                      <li><a href="">logout</a>
                     </ul>
                   </div>
                 </li>
@@ -177,6 +177,7 @@
                         </li>
                     {% endif %}
                 </ul>
+              -->
               </div>
             </div>
           </div>
@@ -195,7 +196,7 @@
   {% endif %}
 
 
-  <!--================model section =================-->
+  <!--================model section =================-
   {% if user.is_authenticated ==  False  %}
 
  <div class="modal fade" id="loginmodel" tabindex="-1" role="dialog" aria-labelledby="loginmodel" aria-hidden="true">
@@ -203,14 +204,14 @@
     <div class="modal-content">
       <div class="modal-header" style="margin-left: 35%;color: #64FFB1;">
         <h3 class="mb-30  title_color" style="color: #000000;margin-top: 5%;" >Login</h3>
-        <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+        <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         
-            <form action="{% url 'accounts:login' %}" method="POST" >
+            <form action="" method="POST" >
                 {% csrf_token %}
                
                 
@@ -269,7 +270,7 @@
 
 
 
- <!--================Register model =================-->
+ <!--================Register model =================
 
 
 
@@ -280,13 +281,13 @@
     <div class="modal-content">
       <div class="modal-header" style="margin-left: 30%;">
         <h3 class="mb-30 title_color" style="color: #000000;margin-top:5%">Register</h3>
-        <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+        <!--<h5 class="modal-title" id="exampleModalLabel">Modal title</h5> 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="accounts/register"  method="POST">
+        <form action=""  method="POST">
                 
           {%  csrf_token %}
           <div class="mt-10">

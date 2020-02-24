@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, get_object_or_404 , redirect
-from .models import Category, Product 
-
+from .models import Category, Product , ProductOrder
+from django.core.mail import send_mail
 
 
 
@@ -51,17 +51,18 @@ def order(request , slug):
 def makeorder(request):
     
     if request.method =='POST':
-        name = request.POST['product_name']
-        price  = request.POST['product_price']
-        quantity = request.POST['quantity']
-        userfirstname = request.POST['userfirst_name']
-        userlastname  = request.POST['userlast_name']
-        usercontact = request.POST['usercontact']
-        useremail = request.POST['useremail']
-        userpicode = request.POST['userpincode']
-        useraddress = request.POST['useraddress']
-
-        #order = Liteorder.objects.create(   name=name , price=price , quantity=quantity , userfirstname=userfirstname , userlastname=userlastname , usercontact=usercontact,useremail=useremail ,userpicode=userpicode,useraddress= useraddress)
+        productname = request.POST['product_name']
+        userfirstname = request.POST['first_name']
+        userlastname  = request.POST['last_name']
+        usercontact = request.POST['phone_number']
+        useremail = request.POST['email']
+        country = request.POST['country']
+        useraddressline1 = request.POST['add_1']
+        useraddressline2 = request.POST['add_2']
+        city = request.POST['city']
+        userpincode = request.POST['zip_code']
+        note = request.POST['message']
+        
+        
+        order = ProductOrder.objects.create(productname=productname , userfirstname=userfirstname , userlastname=userlastname , usercontact=usercontact , useremail=useremail , country=country ,useraddressline1 = useraddressline1 , useraddressline2=useraddressline2 , city=city , userpincode=userpincode  , note=note)
         return redirect('/thankyou')
-def login(request):
-    return reverse('accounts:login')
