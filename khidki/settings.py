@@ -26,7 +26,7 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['167.172.154.49']
+ALLOWED_HOSTS = ['khidkistudio.com','167.172.154.49','localhost']
 
 
 EMAIL_USE_TLS = True
@@ -165,11 +165,9 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 #managing media
 
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'products/')
-
