@@ -29,12 +29,6 @@ DEBUG = False
 ALLOWED_HOSTS = ['khidkistudio.com','167.172.154.49','localhost']
 
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'hub888777@gmail.com'
-EMAIL_HOST_PASSWORD = 'kiran@9899'
-EMAIL_PORT = 587
-
 
 
 
@@ -166,7 +160,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 
 
-
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #managing media
 
 MEDIA_URL = '/media/' 
