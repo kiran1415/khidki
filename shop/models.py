@@ -31,7 +31,7 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     stock = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+    image = models.ImageField(upload_to='product/%Y/%m/%d', blank=True)
     updated_at = models.DateTimeField(auto_now=True)
 
 
