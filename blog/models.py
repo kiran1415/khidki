@@ -29,7 +29,7 @@ class Blog(models.Model):
     name = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='blogs/%Y/%m/%d', blank=True)
+    #image = models.ImageField(upload_to='blogs/%Y/%m/%d', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
