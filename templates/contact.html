@@ -60,7 +60,7 @@
           <h2 class="contact-title">Get in Touch</h2>
         </div>
         <div class="col-lg-8 mb-4 mb-lg-0">
-          <form class="form-contact contact_form" action="{% url 'contact:query' %}" method="POST" id="contactForm" novalidate="novalidate">
+          <form class="form-contact contact_form" action="{% url 'contact:query' %}" method="POST" id="contactForm" >
             <div class="row">
               {% csrf_token %}
               <div class="col-sm-6">
@@ -112,7 +112,7 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h3><a href="mailto:contact@colorlib.com">contact@khidkistudio.com</a></h3>
+              <h3><a href="mailto:contact@khidkistudio.com">contact@khidkistudio.com</a></h3>
               <p>Send us your query anytime!</p>
             </div>
           </div>
