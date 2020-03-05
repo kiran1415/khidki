@@ -26,7 +26,7 @@ SECRET_KEY = 'r#r*yp(-4o@$$7658gnf9$=%-y+mwayag4v+7py=_j1-3t)7xy'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['khidkistudio.com','167.172.154.49','localhost']
+ALLOWED_HOSTS = ['khidkistudio.com','www.khidkistudio.com','167.172.154.49','localhost']
 
 
 
